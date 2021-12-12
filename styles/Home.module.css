@@ -92,3 +92,38 @@
     flex-direction: column;
   }
 }
+
+.button {
+  box-sizing: border-box;
+  padding: 0.5rem 1.25rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 1rem 0.4rem;
+  color: #fff;
+  background: #a68c2f;
+  border: 0;
+  border-radius: 2px;
+  outline: 0;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.button:focus,
+.button:active {
+  border: 1px solid white;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter input {
+  padding: 0.5rem;
+  text-align: start;
+  border-radius: 2px;
+  border: 0;
+}

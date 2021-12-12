@@ -1,10 +1,17 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WrestlerCard from "../components/WrestlerCard";
 
 export default function Home({ wrestlers }) {
-  const [roster, setRoster] = useState("Men");
+  const [roster, setRoster] = useState("All");
+  const [searchFilter, setSearchFilter] = useState("");
+  const handleChange = (e) => setSearchFilter(e.target.value.toLowerCase());
+
+  useEffect(() => {
+    setSearchFilter("");
+  }, [roster]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,9 +23,25 @@ export default function Home({ wrestlers }) {
       <main className={styles.main}>
         <h1 className={styles.title}>All Elite Wrestlers</h1>
         <div>
-          <button onClick={() => setRoster("Men")}>Men</button>
-          <button onClick={() => setRoster("Women")}>Women</button>
-          <button onClick={() => setRoster("All")}>All</button>
+          <button className={styles.button} onClick={() => setRoster("All")}>
+            All
+          </button>
+          <button className={styles.button} onClick={() => setRoster("Men")}>
+            Men
+          </button>
+          <button className={styles.button} onClick={() => setRoster("Women")}>
+            Women
+          </button>
+          <button
+            className={styles.button}
+            onClick={() => setRoster("Champions")}
+          >
+            Champions
+          </button>
+        </div>
+        <div className={styles.filter}>
+          <p>Filter {roster.toLowerCase()} by name:</p>
+          <input type="text" value={searchFilter} onChange={handleChange} />
         </div>
         <div className={styles.grid}>
           {wrestlers
@@ -32,6 +55,12 @@ export default function Home({ wrestlers }) {
               return 0;
             })
             .filter((wrestler) => {
+              return wrestler.Name.toLowerCase().includes(searchFilter);
+            })
+            .filter((wrestler) => {
+              if (roster === "Champions") {
+                return wrestler.Championship;
+              }
               if (roster === "All") {
                 return wrestler.Active;
               }
