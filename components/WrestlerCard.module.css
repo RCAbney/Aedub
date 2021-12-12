@@ -1,0 +1,74 @@
+.wrestlerCard {
+  text-transform: uppercase;
+}
+
+.wrestlerCard p {
+  margin: 0;
+}
+
+.championship,
+.nickname {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 0;
+  line-height: 0.5;
+}
+
+.titleSection {
+  padding: 1rem;
+  min-height: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  margin: 0;
+  color: #a68c2f;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.records {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.division {
+  font-size: 0.85rem;
+}
+.record {
+  font-size: 0.6rem;
+  color: #a68c2f;
+}
+
+.winsLosses {
+  padding-top: 0.5rem;
+}
+
+.overall p {
+  font-style: italic;
+}
+
+.overall p + :last-child {
+  font-size: 1.2rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.current,
+.career {
+  background-color: #a68c2f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;
+}
+
+.career {
+  background-color: #000;
+}
