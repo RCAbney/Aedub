@@ -128,6 +128,11 @@
   border: 0;
 }
 
+.headline {
+  font-size: clamp(1rem, -0.875rem + 8.333vw, 3.5rem);
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .filter {
     flex-direction: column;

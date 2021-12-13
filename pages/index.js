@@ -21,7 +21,7 @@ export default function Home({ wrestlers }) {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>All Elite Wrestlers</h1>
+        <h1 className={styles.headline}>All Elite Wrestlers</h1>
         <div>
           <button className={styles.button} onClick={() => setRoster("All")}>
             All
