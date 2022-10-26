@@ -77,7 +77,7 @@ export default function Home({ wrestlers }) {
       </main>
 
       <footer className={styles.footer}>
-        <p>All Elite Wrestlers</p>
+        <p>All Elite Wrestlers project thingy</p>
       </footer>
     </div>
   );
